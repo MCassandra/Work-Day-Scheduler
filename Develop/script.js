@@ -1,19 +1,16 @@
-var saveButton=document.querySelector(".saveBtn");
-var updatetext = document.querySelector("#text");
-var storageInput = document.querySelector(".storage");
+var text1 = document.getElementById("text1");
+var saveBtn = document.querySelector(".saveBtn");
+var inputTask = document.querySelector(".task");
 
-// on click, set input to local storage
-saveButton.addEventListener("click", function(event){
-    event.preventDefault();
-    
-})
 
-var savedTask=document.getElementById(".task").value;
-    document.localStorage.setItem("inputTask", savedTask);
 
-    // need a function to get input to local storage
-function save(){
-    document.localStorage.getItem("inputTask", savedTask);
+function saveInput (){
+    var needToDo = text1.value;
+    console.log (needToDo);
+// make sure input is entered / no empty submitts
+    if (needToDo){
+        localStorage.setItem("task", text1.value);
+    }
 }
-updatetext.document.textContent.savedTask
-save();
+// when click save button, save key-value pairs into local storage
+saveBtn.addEventListener("click", saveInput);
