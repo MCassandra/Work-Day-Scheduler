@@ -16,6 +16,7 @@ function saveInput (){
     }
     showSavedTask();
 }
+showSavedTask();
 
 // when click save button, save key-value pairs into local storage
 saveBtn.addEventListener("click", saveInput);
