@@ -9,10 +9,13 @@ function todaysDate (){
     displayDate.textContent=today;
 }
 
+// get the stored value from local storage and show it on page, even when refreshed
 function showSavedTask(){
     var saved = localStorage.getItem("task");
     text1.textContent = saved;
 }
+
+// get user's input and store the value
 function saveInput (){
     var needToDo = text1.value;
     console.log (needToDo);
@@ -30,3 +33,8 @@ todaysDate();
 saveBtn.addEventListener("click", saveInput);
 
 // figure out how to save inputs for multiple areas
+// looping through local storage using the key value. (got this structure off youtube video)
+// // for (i=0; i<localStorage.length;i++){
+//     var key = localStorage.task(i);
+//     var value = localStorage.getItem("task");
+// }
