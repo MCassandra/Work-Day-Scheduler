@@ -1,7 +1,8 @@
 var displayDate = document.getElementById("now");
 var text1 = document.getElementById("text1");
-var saveBtn = document.querySelector(".saveBtn");
-var inputTask = document.querySelector(".task");
+var saveBtn = document.querySelectorAll(".saveBtn");
+// var inputTask = document.querySelector(".task");
+var textareaEl = document.querySelectorAll(".task")
 
 // show today's date
 function todaysDate (){
@@ -16,12 +17,13 @@ function showSavedTask(){
 }
 
 // get user's input and store the value
-function saveInput (){
+function saveInput (e){
+    textareaEl=(e.target.getAttribute("hour"));
     var needToDo = text1.value;
-    console.log (needToDo);
+    console.log (textareaEl);
 // make sure input is entered / no empty submitts
     if (needToDo){
-        localStorage.setItem("task", text1.value);
+        localStorage.setItem("task", needToDo);
     }
     showSavedTask();
 }
@@ -30,11 +32,6 @@ todaysDate();
 
 
 // when click save button, save key-value pairs into local storage
-saveBtn.addEventListener("click", saveInput);
-
-// figure out how to save inputs for multiple areas
-// looping through local storage using the key value. (got this structure off youtube video)
-// // for (i=0; i<localStorage.length;i++){
-//     var key = localStorage.task(i);
-//     var value = localStorage.getItem("task");
-// }
+for (var i = 0; i < saveBtn.length; i++){
+saveBtn[i].addEventListener("click", saveInput);
+};
