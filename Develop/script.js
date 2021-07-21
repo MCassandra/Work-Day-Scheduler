@@ -18,13 +18,14 @@ function showSavedTask(){
 
 // get user's input and store the value
 function saveInput (e){
-    // got code structure (line 22) from an BCS assistant  
+    // got code structure (line 22) from a BCS assistant  
     textareaEl=(e.target.getAttribute("hour"));
+    
     var needToDo = text1.value;
     console.log (textareaEl);
 // make sure input is entered / no empty submitts
     if (needToDo){
-        localStorage.setItem("task", needToDo);
+        localStorage.setItem("task", text1.value);
     }
     showSavedTask();
 }
