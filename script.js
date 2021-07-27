@@ -14,6 +14,7 @@ function todaysDate (){
 function showSavedTask(){
     var saved = localStorage.getItem("task");
     text1.textContent = saved;
+    
 }
 
 // get user's input and store the value
