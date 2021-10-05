@@ -3,7 +3,7 @@ var saveButton = document.querySelectorAll(".saveBtn");
 var textEls = document.querySelectorAll("textarea");
 
 
-
+// for each button save the users task value
 saveButton.forEach(button => {
     button.addEventListener("click", function (){
         var textEl = this.parentNode.childNodes[3];
@@ -23,7 +23,7 @@ function todaysDate() {
 
 todaysDate();
 
-// create a variable to loop through the times
+// create a variable to loop through the times & if todaysTask exists get from local storage on load. 
 var todaysTasks = JSON.parse(localStorage.getItem("todaysTask")) || {
     "9":{
         hour: "9",
@@ -57,11 +57,12 @@ var todaysTasks = JSON.parse(localStorage.getItem("todaysTask")) || {
         hour: "16",
         task: "",
     },
-}
+    "17":{
+        hour: "17",
+        task: "",
+    },
+};
 
-textEls.forEach(textEl => {
-    textEl.value = todaysTasks[textEl.id].task
-});
 
 // save tasks to local storage
 function saveTask() {
@@ -69,21 +70,11 @@ function saveTask() {
     console.log("saved");
 };
 
+// for each textarea get their task values from the appropriate id
+textEls.forEach(textEl => {
+    textEl.value = todaysTasks[textEl.id].task;
+    
+});
 
-// // display any tasks in local storage on page
-// function displayTask() {
-//     todaysTasks.forEach(task =>{
-//         // console.log(task);
-//     }
-//     )
-// };
-
-// displayTask();
-// shows existing data in local storage if it exists
-
-
-
-
-// saves tasks/data to be stored in local storage
-// var 
-// saveButton.addEventListener("click", saveTask);
+// changing colors based on time
+ 
