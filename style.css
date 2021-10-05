@@ -4,13 +4,13 @@ body {
   line-height: 1;
 }
 
- textarea {
+textarea {
   background: transparent;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
-  padding: 10px; 
+  padding: 10px;
 }
 
 .jumbotron {
@@ -69,9 +69,4 @@ body {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-
-.container {
-  border:#000000 solid;
-}
-
 

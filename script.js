@@ -21,6 +21,8 @@ function todaysDate() {
     displayDate.textContent = today;
 }
 
+todaysDate();
+
 // create a variable to loop through the times
 var todaysTasks = JSON.parse(localStorage.getItem("todaysTask")) || {
     "9":{
@@ -80,7 +82,7 @@ function saveTask() {
 // shows existing data in local storage if it exists
 
 
-todaysDate();
+
 
 // saves tasks/data to be stored in local storage
 // var 
