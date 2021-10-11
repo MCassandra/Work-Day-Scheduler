@@ -7,9 +7,9 @@ var textEls = document.querySelectorAll("textarea");
 saveButton.forEach(button => {
     button.addEventListener("click", function (){
         var textEl = this.parentNode.childNodes[3];
-        console.log(textEl.value);
-        console.log(textEl.id);
-        console.log(todaysTasks[textEl.id]);
+        // console.log(textEl.value);
+        // console.log(textEl.id);
+        // console.log(todaysTasks[textEl.id]);
         todaysTasks[textEl.id].task = textEl.value;
         saveTask();
     })
@@ -23,7 +23,7 @@ function todaysDate() {
 
 todaysDate();
 
-// create a variable to loop through the times & if todaysTask exists get from local storage on load. 
+// create a variable to loop through the times. if todaysTask exists, get from local storage on load. 
 var todaysTasks = JSON.parse(localStorage.getItem("todaysTask")) || {
     "9":{
         hour: "9",
@@ -67,7 +67,7 @@ var todaysTasks = JSON.parse(localStorage.getItem("todaysTask")) || {
 // save tasks to local storage
 function saveTask() {
     localStorage.setItem("todaysTask", JSON.stringify(todaysTasks));
-    console.log("saved");
+    // console.log("saved");
 };
 
 // for each textarea get their task values from the appropriate id
